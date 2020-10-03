@@ -4,6 +4,8 @@
     Author     : Rogerio
 --%>
 <%@page import="br.edu.ads.poo.Disciplina"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="java.util.ArrayList"%>
 <% 
 Disciplina obj = null;
 try{
@@ -21,16 +23,17 @@ if(request.getParameter("edita")!= null){
             obj.getList().get(i).setNota(0);
              response.sendRedirect(request.getContextPath()+"/disciplinas.jsp");
         }else{
-             response.sendRedirect(request.getContextPath()+"/disciplinas.jsp");
+            obj.getList().get(i).setNota(nota);
+            response.sendRedirect(request.getContextPath()+"/disciplinas.jsp");
         }
 }
 %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
- <%@include file="WEB-INF/jspf/head.jspf"%>
+ 
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+           <%@include file="WEB-INF/jspf/head.jspf"%>
         <title>JSP Page</title>
     </head>
     <body>
@@ -46,7 +49,7 @@ if(request.getParameter("edita")!= null){
                 <%=obj.getList().get(i).getNota()%>
                 <input type ="float" name="nota" value="0"/>
                 <input type ="submit" name="edita" value="Reeditar nota"/>
-                <input type ="float" name="i" value="<%=i%>"/>
+                <input type ="hidden" name="i" value="<%=i%>"/>
             </form>
         </td>
     </tr>
