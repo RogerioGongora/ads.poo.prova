@@ -26,6 +26,7 @@ if(request.getParameter("edita")!= null){
 }
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@include file="WEB-INF/jspf/head.jspf"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,6 +34,7 @@ if(request.getParameter("edita")!= null){
         <title>JSP Page</title>
     </head>
     <body>
+         <%@include file="WEB-INF/jspf/menu.jspf"%>
         <h1>Hello World!</h1>
         <% for(int i = 0; i<obj.getList().size(); i++){%>
     <tr>
@@ -49,5 +51,6 @@ if(request.getParameter("edita")!= null){
         </td>
     </tr>
     <%}%>
+     <%@include file="WEB-INF/jspf/script.jspf"%>
     </body>
 </html>

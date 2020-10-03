@@ -37,9 +37,11 @@ if(application.getAttribute("obj")!=null){
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="WEB-INF/jspf/head.jspf"%>
         <title>Prova Poo</title>
     </head>
     <body>
+         <%@include file="WEB-INF/jspf/menu.jspf"%>
         <h1>Home</h1>
         <p>Rogério Alexandre Gongora </p>
         <p>1290481923024</p>
@@ -51,5 +53,6 @@ if(application.getAttribute("obj")!=null){
         } 
         
         %>
+         <%@include file="WEB-INF/jspf/script.jspf"%>
     </body>
 </html>
