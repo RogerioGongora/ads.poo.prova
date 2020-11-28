@@ -20,7 +20,12 @@
         <p>Rogério Alexandre Gongora </p>
         <p>1290481923024</p>
         <p> Quantidades de materias</p>
-        
+        <%try{
+            out.print(Disciplina.getList().size());
+        }catch(Exception e){
+            out.println(e);
+        }
+        %>
          <%@include file="WEB-INF/jspf/script.jspf"%>
     </body>
 </html>
